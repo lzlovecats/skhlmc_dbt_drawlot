@@ -1,4 +1,5 @@
 import random
+import time
 with open("teams_base.txt", "r") as f:
     que = f.readlines()
 draw_team_list = []
@@ -33,7 +34,10 @@ else:
             draw = random.randint(0, len(skip_team) - 1)
         spec_num.append(draw)
         team.append(skip_team[draw])
-    print("")
+    print("\nLoading...")
+    time.sleep(1)
     for i in range(len(skip_team)):
         print(f"Team {i + 1}: {team[i]}")
+        time.sleep(1)
+    time.sleep(1)
     print(f"Team {len(skip_team) + 1}: {draw_team_list[spec]}")
